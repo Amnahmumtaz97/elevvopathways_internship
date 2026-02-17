@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow - Organize Your Work</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="w-full bg-white shadow fixed top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#" class="text-2xl font-bold text-indigo-600">TaskFlow</a>
+      <ul class="hidden md:flex gap-8 font-semibold">
+        <li><a href="#about" class="hover:text-indigo-600 transition">About</a></li>
+        <li><a href="#features" class="hover:text-indigo-600 transition">Features</a></li>
+        <li><a href="#reviews" class="hover:text-indigo-600 transition">Reviews</a></li>
+        <li><a href="#pricing" class="hover:text-indigo-600 transition">Pricing</a></li>
+        <li><a href="#contact" class="hover:text-indigo-600 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="h-20"></div>
+
+  <!-- HERO SECTION -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-indigo-600 to-blue-500 text-white" id="hero">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">TaskFlow</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-2xl">
+      Organize your tasks. Boost productivity. Achieve more every day.
+    </p>
+    <a href="#pricing" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+      Get Started
+    </a>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 px-6 max-w-5xl mx-auto reveal">
+    <h2 class="text-3xl font-bold text-center mb-8">About TaskFlow</h2>
+    <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+      <div class="flex-1 bg-white p-8 rounded-xl shadow text-center mb-8 md:mb-0">
+        <i data-feather="info" class="mx-auto mb-4 text-indigo-600"></i>
+        <p class="text-lg mb-4">TaskFlow is a modern productivity platform designed for individuals and teams. Our intuitive interface and robust features help you organize, track, and accomplish your goals efficiently.</p>
+        <p class="text-md text-gray-600">Whether you're managing daily tasks or collaborating on projects, TaskFlow adapts to your workflow and empowers you to achieve more every day.</p>
+      </div>
+      <div class="flex-1 flex flex-col gap-8">
+        <div class="bg-gray-900 text-white p-6 rounded-xl shadow text-center">
+          <i data-feather="target" class="mx-auto mb-2 text-indigo-400"></i>
+          <h3 class="font-semibold text-lg mb-2">Our Mission</h3>
+          <p>To make task management effortless, accessible, and enjoyable for everyone.</p>
+        </div>
+        <div class="bg-gray-900 text-white p-6 rounded-xl shadow text-center">
+          <i data-feather="award" class="mx-auto mb-2 text-indigo-400"></i>
+          <h3 class="font-semibold text-lg mb-2">Our Values</h3>
+          <p>Innovation, simplicity, and user-centric design drive everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-20 px-6 max-w-6xl mx-auto reveal">
+    <h2 class="text-3xl font-bold text-center mb-12">Powerful Features</h2>
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+      <div class="p-6 bg-white shadow-md rounded-xl">
+        <i data-feather="check-circle" class="mx-auto mb-4 text-indigo-600"></i>
+        <h3 class="font-semibold text-xl mb-2">Smart Task Tracking</h3>
+        <p>Organize and prioritize tasks efficiently with intuitive controls.</p>
+      </div>
+      <div class="p-6 bg-white shadow-md rounded-xl">
+        <i data-feather="calendar" class="mx-auto mb-4 text-indigo-600"></i>
+        <h3 class="font-semibold text-xl mb-2">Deadline Management</h3>
+        <p>Stay ahead with reminders and clear scheduling tools.</p>
+      </div>
+      <div class="p-6 bg-white shadow-md rounded-xl">
+        <i data-feather="users" class="mx-auto mb-4 text-indigo-600"></i>
+        <h3 class="font-semibold text-xl mb-2">Team Collaboration</h3>
+        <p>Work together seamlessly with shared projects and updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="py-20 bg-gray-100 px-6 reveal">
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-20 px-6 max-w-3xl mx-auto reveal">
+        <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+        <form class="bg-white p-8 rounded-xl shadow space-y-6" aria-label="Contact form">
+          <div>
+            <label for="name" class="block font-semibold mb-2">Name</label>
+            <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-required="true" aria-label="Name" />
+          </div>
+          <div>
+            <label for="email" class="block font-semibold mb-2">Email</label>
+            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-required="true" aria-label="Email" />
+          </div>
+          <div>
+            <label for="message" class="block font-semibold mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-required="true" aria-label="Message"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold hover:bg-indigo-700 transition">Send Message</button>
+        </form>
+      </section>
+    <h2 class="text-3xl font-bold text-center mb-12">What Users Say</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p>"TaskFlow completely transformed how I manage my day."</p>
+        <h4 class="mt-4 font-semibold">— Sarah M.</h4>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p>"Simple, clean, and extremely effective. Highly recommended."</p>
+        <h4 class="mt-4 font-semibold">— Ahmed R.</h4>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p>"The team collaboration feature is a game changer."</p>
+        <h4 class="mt-4 font-semibold">— Daniel K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 px-6 max-w-6xl mx-auto reveal">
+    <h2 class="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-white p-8 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-4">Free</h3>
+        <p class="text-3xl font-bold mb-4">$0</p>
+        <p>Basic task management features</p>
+      </div>
+      <div class="bg-indigo-600 text-white p-8 rounded-xl shadow-lg scale-105">
+        <h3 class="text-xl font-semibold mb-4">Pro</h3>
+        <p class="text-3xl font-bold mb-4">$9/month</p>
+        <p>Advanced features & reminders</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-4">Team</h3>
+        <p class="text-3xl font-bold mb-4">$29/month</p>
+        <p>Full collaboration tools</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-10 text-center">
+    <h3 class="text-xl font-semibold mb-4">TaskFlow</h3>
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+    </div>
+    <div class="mb-4">
+      <a href="#about" class="text-gray-400 hover:text-white mx-2">About</a>
+      <a href="#features" class="text-gray-400 hover:text-white mx-2">Features</a>
+      <a href="#reviews" class="text-gray-400 hover:text-white mx-2">Reviews</a>
+      <a href="#pricing" class="text-gray-400 hover:text-white mx-2">Pricing</a>
+      <a href="#contact" class="text-gray-400 hover:text-white mx-2">Contact</a>
+    </div>
+    <p class="text-gray-400 text-sm">© 2026 TaskFlow. All rights reserved.</p>
+    <p class="text-gray-500 text-xs mt-2">Made with <span aria-label="love">❤️</span> by the TaskFlow Team</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-indigo-700 transition z-50">
+    <i data-feather="arrow-up"></i>
+  </button>
+
+  <script>
+    feather.replace();
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 100;
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a, footer a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.hash) {
+          e.preventDefault();
+          document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove('hidden');
+      } else {
+        scrollTopBtn.classList.add('hidden');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Contact form (demo only)
+    document.querySelector('form[aria-label="Contact form"]').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting us! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
