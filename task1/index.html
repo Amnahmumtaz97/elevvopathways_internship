@@ -7,6 +7,7 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="main.js"></script>
   <style>
     .reveal {
       opacity: 0;
@@ -178,53 +179,7 @@
     <i data-feather="arrow-up"></i>
   </button>
 
-  <script>
-    feather.replace();
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll() {
-      reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const revealPoint = 100;
-        if (elementTop < windowHeight - revealPoint) {
-          element.classList.add('active');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('nav a, footer a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (this.hash) {
-          e.preventDefault();
-          document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Scroll to top button
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.remove('hidden');
-      } else {
-        scrollTopBtn.classList.add('hidden');
-      }
-    });
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Contact form (demo only)
-    document.querySelector('form[aria-label="Contact form"]').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for contacting us! We will get back to you soon.');
-      this.reset();
-    });
-  </script>
+  <!-- JS moved to main.js -->
 
 </body>
 </html>
