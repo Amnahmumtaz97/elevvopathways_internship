@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-root">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="https://openweathermap.org/img/logo_owm.ico" alt="OpenWeather" class="logo" onerror="this.style.display='none'" />
+        <span class="brand">OpenWeather</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="active" data-sidebar="home">Home</a>
+        <a data-sidebar="cases">Cases</a>
+        <a data-sidebar="reports">Reports</a>
+        <a data-sidebar="triggers">Triggers</a>
+        <a data-sidebar="tariff">Tariff</a>
+        <a data-sidebar="guide">User Guide</a>
+        <a data-sidebar="about">About us</a>
+        <a data-sidebar="settings">Settings</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="ask-btn">Ask a question</button>
+        <div class="dark-toggle">
+          <input type="checkbox" id="darkmode-toggle" />
+          <label for="darkmode-toggle">Dark mode</label>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1><span class="topbar-icon">🌦️</span> Dashboard: <span id="city-title">London</span></h1>
+        </div>
+        <form id="search-form">
+          <input type="text" id="city-input" placeholder="Search city or zip..." required />
+          <button type="submit" title="Search">🔍</button>
+          <button type="button" id="geo-btn" title="Use my location">📍</button>
+        </form>
+      </header>
+      <section class="weather-section">
+        <div class="weather-map-panel">
+          <div class="section-header"><span>Weather Layers</span></div>
+          <div class="weather-map-controls">
+            <button class="tab active" data-tab="temp">🌡️ Temperature</button>
+            <button class="tab" data-tab="precip">🌧️ Precipitation</button>
+            <button class="tab" data-tab="pressure">🧭 Pressure</button>
+            <button class="tab" data-tab="wind">💨 Wind speed</button>
+            <button class="tab" data-tab="clouds">☁️ Clouds</button>
+          </div>
+          <div class="weather-map" id="weather-map">
+            <!-- Map or image placeholder -->
+            <div class="map-placeholder">Weather Map Preview</div>
+          </div>
+          <div class="section-header"><span>Current Weather</span></div>
+          <div class="weather-info-panel" id="weather"></div>
+        </div>
+        <div class="alerts-panel">
+          <div class="section-header"><span>Notifications</span></div>
+          <div class="alerts-header">
+            <span id="current-date"></span>
+            <div class="alerts-tabs">
+              <button class="active">All</button>
+              <button>Alerts</button>
+              <button>Cases</button>
+              <button>Reports</button>
+              <button>Trigger Events</button>
+            </div>
+          </div>
+          <div class="alerts-list" id="alerts-list">
+            <!-- Alerts will be rendered here -->
+          </div>
+        </div>
+      </section>
+      <section class="hourly-section">
+        <div class="section-header"><span>3-Day Forecast</span></div>
+        <div id="forecast"></div>
+      </section>
+      <div id="loading" class="hidden">Loading...</div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

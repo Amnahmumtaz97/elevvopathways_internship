@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Blog Homepage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+    <div class="sidebar-profile">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="sidebar-avatar" />
+      <div class="sidebar-profile-info">
+        <div class="sidebar-profile-name">Alex Morgan</div>
+        <div class="sidebar-profile-role">Blogger & Explorer</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" id="nav-home"><span class="sidebar-icon">🏠</span> Home</a></li>
+        <li><a href="#" id="nav-about"><span class="sidebar-icon">👤</span> About</a></li>
+        <li><a href="#" id="nav-categories"><span class="sidebar-icon">📚</span> Categories</a></li>
+        <li><a href="#" id="nav-contact"><span class="sidebar-icon">✉️</span> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-widgets">
+      <div class="widget widget-about">
+        <h3>About Me</h3>
+        <p>Hi! I'm Alex, a passionate blogger sharing insights on tech, travel, food, and lifestyle. Welcome to my digital home!</p>
+      </div>
+      <div class="widget widget-tags">
+        <h3>Popular Tags</h3>
+        <div class="tags">
+          <span>Tech</span> <span>Travel</span> <span>Food</span> <span>Lifestyle</span> <span>AI</span> <span>Productivity</span>
+        </div>
+      </div>
+      <div class="widget widget-featured">
+        <h3>Featured Post</h3>
+        <div class="featured-post">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Featured" />
+          <div class="featured-title">The Rise of Quantum Computing</div>
+        </div>
+      </div>
+      <div class="widget widget-social">
+        <h3>Follow Me</h3>
+        <div class="social-links">
+          <a href="#" title="Twitter"><span class="sidebar-icon">🐦</span></a>
+          <a href="#" title="Instagram"><span class="sidebar-icon">📸</span></a>
+          <a href="#" title="LinkedIn"><span class="sidebar-icon">💼</span></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="main-content">
+    <header class="blog-header">
+      <h1>My Personal Blog</h1>
+    </header>
+    <main>
+      <section class="blog-controls">
+        <input type="text" id="search-input" placeholder="Search posts..." />
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="Tech">Tech</option>
+          <option value="Travel">Travel</option>
+          <option value="Food">Food</option>
+          <option value="Lifestyle">Lifestyle</option>
+        </select>
+      </section>
+      <section class="blog-posts" id="blog-posts"></section>
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
