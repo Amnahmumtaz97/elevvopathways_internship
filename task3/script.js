@@ -170,7 +170,7 @@ let currentLayer = 'temp';
 function updateMapPreview(layer = 'temp') {
   // Use OpenWeatherMap tile preview (static image for demo)
   // For real interactive map, use Leaflet or similar
-  const center = '24.8607,67.0011'; // Karachi coords as default
+  const center = '31.5497,74.3436'; // Lahore, PK
   const zoom = 5;
   const tile = owmTileLayers[layer] || owmTileLayers.temp;
   // OWM tile preview (static, not interactive)
@@ -215,14 +215,14 @@ const mockData = {
 function renderAlertsTab(tab) {
   const items = mockData[tab] || [];
   if (!items.length) {
-    alertsListDiv.innerHTML = `<div style=\"color:#aaa;\">No ${tab} found</div>`;
+    alertsListDiv.innerHTML = `<div style="color:#aaa;">No ${tab} found</div>`;
     return;
   }
   alertsListDiv.innerHTML = items.map(item => `
-    <div class=\"alert-item\" style=\"display:flex;align-items:center;gap:0.7em;padding:0.5em 0;border-bottom:1px solid #31343c;\">
-      <span class=\"alert-type\" style=\"font-weight:600;color:#ffb86b;min-width:60px;\">${item.type}</span>
-      <span class=\"alert-desc\" style=\"flex:1;\">${item.event} - ${item.desc}</span>
-      <span class=\"alert-time\" style=\"font-size:0.97em;color:#aaa;\">${item.time}</span>
+    <div class="alert-item" style="display:flex;align-items:center;gap:0.7em;padding:0.5em 0;border-bottom:1px solid #31343c;">
+      <span class="alert-type" style="font-weight:600;color:#ffb86b;min-width:60px;">${item.type}</span>
+      <span class="alert-desc" style="flex:1;">${item.event} - ${item.desc}</span>
+      <span class="alert-time" style="font-size:0.97em;color:#aaa;">${item.time}</span>
     </div>
   `).join('');
 }
@@ -240,3 +240,28 @@ renderAlertsTab('all');
 
 // Initial load (default city: Karachi, Pakistan)
 fetchWeather('Karachi');
+
+// Initialize Leaflet map preview
+window.addEventListener('DOMContentLoaded', function() {
+  var map = L.map('map', {
+    center: [31.5497, 74.3436], // Lahore, PK
+    zoom: 10,
+    zoomControl: true,
+    attributionControl: true
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18,
+    minZoom: 2
+  }).addTo(map);
+
+  // Dark mode toggle
+  var darkToggle = document.getElementById('darkmode-toggle');
+  darkToggle.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', darkToggle.checked);
+    document.querySelector('.sidebar').classList.toggle('dark-mode', darkToggle.checked);
+    document.querySelector('.main-content').classList.toggle('dark-mode', darkToggle.checked);
+    document.querySelector('.weather-card').classList.toggle('dark-mode', darkToggle.checked);
+    document.getElementById('map').classList.toggle('dark-mode', darkToggle.checked);
+  });
+});

@@ -328,3 +328,37 @@ body {
 .hidden {
   display: none;
 }
+
+/* Ensure map container is visible and styled for dark mode */
+body.dark-mode #map {
+  background: #222;
+}
+
+body.dark-mode {
+  background: #181c23;
+  color: #f6c27a;
+}
+.sidebar.dark-mode {
+  background: #23262e;
+  color: #f6c27a;
+}
+.main-content.dark-mode {
+  background: #23262e;
+  color: #f6c27a;
+}
+.weather-card.dark-mode {
+  background: #23262e;
+  color: #f6c27a;
+}
+#map.dark-mode {
+  background: #222;
+}
+/* Adjust nav and buttons for dark mode */
+.sidebar.dark-mode nav ul li,
+.sidebar.dark-mode nav ul li a {
+  color: #f6c27a;
+}
+.sidebar.dark-mode nav ul li:hover {
+  background: #353945;
+  color: #f6c27a;
+}
