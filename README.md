@@ -1,8 +1,5 @@
 # Elevvo Internship Project
 
-![Version](https://img.shields.io/badge/version-1.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
 This repository contains the tasks completed during the **Elevvo Internship**, which focused on **Web Development**, **UI/UX**, and **API Integration**. The tasks range from static HTML/CSS/JS websites to React-based projects with API-driven dashboards.
 
 ---
@@ -46,7 +43,7 @@ This project showcases the key skills developed during the **Elevvo Internship**
   - User-friendly navigation
   - Dynamic data handling
 
-![React Dashboard](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![React Dashboard](https://img.shields.io/badge/Status-Done-green)
 
 ### Task 3: Weather Dashboard
 
