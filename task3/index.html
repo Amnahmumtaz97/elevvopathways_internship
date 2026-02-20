@@ -8,82 +8,72 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <div class="dashboard-root">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <img src="https://openweathermap.org/img/logo_owm.ico" alt="OpenWeather" class="logo" onerror="this.style.display='none'" />
-        <span class="brand">OpenWeather</span>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">🌦️</span>
+      <span class="app-title">OpenWeather</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#overview">Home</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#triggers">Triggers</a></li>
+        <li><a href="#tariff">Tariff</a></li>
+        <li><a href="#guide">User Guide</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-actions">
+      <button class="ask-btn">Ask a question</button>
+     
+    </div>
+  </aside>
+  <main class="main-content">
+    <header class="main-header">
+      <span class="dashboard-title">Dashboard: <span class="location">Lahore, PK</span></span>
+      <div class="search-group">
+        <input class="search-bar" placeholder="Lahore" />
+        <button class="search-btn" title="Search">🔍</button>
+        <button class="pin-btn" title="Pin">📍</button>
       </div>
-      <nav class="sidebar-nav">
-        <a class="active" data-sidebar="home">Home</a>
-        <a data-sidebar="cases">Cases</a>
-        <a data-sidebar="reports">Reports</a>
-        <a data-sidebar="triggers">Triggers</a>
-        <a data-sidebar="tariff">Tariff</a>
-        <a data-sidebar="guide">User Guide</a>
-        <a data-sidebar="about">About us</a>
-        <a data-sidebar="settings">Settings</a>
-      </nav>
-      <div class="sidebar-bottom">
-        <button class="ask-btn">Ask a question</button>
-        <div class="dark-toggle">
-          <input type="checkbox" id="darkmode-toggle" />
-          <label for="darkmode-toggle">Dark mode</label>
-        </div>
+    </header>
+    <section class="weather-section">
+      <div class="weather-layers">
+        <span class="layer-title">Weather Layers</span>
+        <button class="layer-btn active">🌡️ Temperature</button>
+        <button class="layer-btn">🌧️ Precipitation</button>
+        <button class="layer-btn">🧭 Pressure</button>
+        <button class="layer-btn">💨 Wind speed</button>
+        <button class="layer-btn">☁️ Clouds</button>
       </div>
-    </aside>
-    <main class="main-content">
-      <header class="topbar">
-        <div class="topbar-left">
-          <h1><span class="topbar-icon">🌦️</span> Dashboard: <span id="city-title">London</span></h1>
-        </div>
-        <form id="search-form">
-          <input type="text" id="city-input" placeholder="Search city or zip..." required />
-          <button type="submit" title="Search">🔍</button>
-          <button type="button" id="geo-btn" title="Use my location">📍</button>
-        </form>
-      </header>
-      <section class="weather-section">
-        <div class="weather-map-panel">
-          <div class="section-header"><span>Weather Layers</span></div>
-          <div class="weather-map-controls">
-            <button class="tab active" data-tab="temp">🌡️ Temperature</button>
-            <button class="tab" data-tab="precip">🌧️ Precipitation</button>
-            <button class="tab" data-tab="pressure">🧭 Pressure</button>
-            <button class="tab" data-tab="wind">💨 Wind speed</button>
-            <button class="tab" data-tab="clouds">☁️ Clouds</button>
-          </div>
-          <div class="weather-map" id="weather-map">
-            <!-- Map or image placeholder -->
-            <div class="map-placeholder">Weather Map Preview</div>
-          </div>
-          <div class="section-header"><span>Current Weather</span></div>
-          <div class="weather-info-panel" id="weather"></div>
-        </div>
-        <div class="alerts-panel">
-          <div class="section-header"><span>Notifications</span></div>
-          <div class="alerts-header">
-            <span id="current-date"></span>
-            <div class="alerts-tabs">
-              <button class="active">All</button>
-              <button>Alerts</button>
-              <button>Cases</button>
-              <button>Reports</button>
-              <button>Trigger Events</button>
-            </div>
-          </div>
-          <div class="alerts-list" id="alerts-list">
-            <!-- Alerts will be rendered here -->
-          </div>
-        </div>
-      </section>
-      <section class="hourly-section">
-        <div class="section-header"><span>3-Day Forecast</span></div>
-        <div id="forecast"></div>
-      </section>
-      <div id="loading" class="hidden">Loading...</div>
-    </main>
-  </div>
+      <div class="weather-map-container">
+        <div id="map"></div>
+      </div>
+      <div class="current-weather">
+        <span class="current-title">Current Weather</span>
+        <div class="weather-card">Sample Weather Card</div>
+        <div class="forecast-card"></div>
+      </div>
+    </section>
+    <section class="notifications-section">
+      <div class="notifications-header">
+        <span class="notifications-title">Notifications</span>
+        <span class="notifications-date">February 20, 2026</span>
+      </div>
+      <div class="notifications-tabs">
+        <button class="notif-tab active">All</button>
+        <button class="notif-tab">Alerts</button>
+        <button class="notif-tab">Cases</button>
+        <button class="notif-tab">Reports</button>
+        <button class="notif-tab">Trigger Events</button>
+      </div>
+      <div class="notifications-list">
+        <span class="no-alerts">No alerts</span>
+      </div>
+    </section>
+  </main>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
