@@ -7,7 +7,7 @@ export default function BlogHome() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [page, setPage] = useState(1);
-  const POSTS_PER_PAGE = 4;
+  const POSTS_PER_PAGE = 6;
 
   const filtered = posts.filter(
     (post) =>
@@ -28,7 +28,7 @@ export default function BlogHome() {
             setSearch(e.target.value);
             setPage(1);
           }}
-          style={{ padding: "0.7em 1.2em", borderRadius: 8, border: "1px solid #bcdffb", fontSize: "1.08rem", background: "#fff", color: "#222", minWidth: 220 }}
+          style={{ padding: "0.7em 1.0em", borderRadius: 8, border: "1px solid #bcdffb", fontSize: "1.08rem", background: "#fff", color: "#222", minWidth: 220 }}
         />
         <select
           value={category}
@@ -36,18 +36,18 @@ export default function BlogHome() {
             setCategory(e.target.value);
             setPage(1);
           }}
-          style={{ padding: "0.7em 1.2em", borderRadius: 8, border: "1px solid #bcdffb", fontSize: "1.08rem", background: "#fff", color: "#222" }}
+          style={{ padding: "0.7em 1.0em", borderRadius: 8, border: "1px solid #bcdffb", fontSize: "1.08rem", background: "#fff", color: "#222" }}
         >
           {categories.map((cat) => (
             <option key={cat} value={cat}>{cat}</option>
           ))}
         </select>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32 }}>
         {postsToShow.map((post, i) => (
           <div key={i} style={{ background: "#fff", borderRadius: 16, boxShadow: "0 2px 12px rgba(52,152,219,0.07)", overflow: "hidden", display: "flex", flexDirection: "column", transition: "transform 0.15s", minHeight: 340 }}>
             <img src={post.image} alt={post.title} style={{ width: "100%", height: 180, objectFit: "cover" }} />
-            <div style={{ padding: "1.1rem 1.2rem 1.2rem 1.2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+            <div style={{ padding: "1.1rem 1.0rem 1.2rem 1.2rem", flex: 1, display: "flex", flexDirection: "column" }}>
               <div style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: 8, color: "#3498db" }}>{post.title}</div>
               <div style={{ fontSize: "1rem", color: "#444", marginBottom: 12, flex: 1 }}>{post.description}</div>
               <div style={{ fontSize: "0.97rem", color: "#888", display: "flex", justifyContent: "space-between", alignItems: "center" }}>

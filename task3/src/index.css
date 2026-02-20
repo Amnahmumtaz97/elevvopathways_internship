@@ -1,0 +1,19 @@
+body {
+  background: #e6f0fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e6f0fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #bcdffb;
+  border-radius: 8px;
+}
